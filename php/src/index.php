@@ -13,7 +13,7 @@ function configure() {
   $db = null;
   try {
     $db = new PDO(
-      'mysql:host=' . $host . ';port=' . $port. ';dbname=' . $dbname,
+      'mysql:unix_socket=/var/lib/mysql/mysql.sock;dbname=' . $dbname,
       $username,
       $password,
       [ PDO::ATTR_PERSISTENT => true,
